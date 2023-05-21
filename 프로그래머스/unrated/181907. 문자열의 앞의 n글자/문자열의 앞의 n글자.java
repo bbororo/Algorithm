@@ -1,12 +1,13 @@
 import java.util.*;
 class Solution {
     public String solution(String my_string, int n) {
+        String answer = "";
         String[] str = my_string.split("");
         
-        String[] answer = Arrays.copyOf(str, n);
+        for(int i = 0;i < n; i++){
+            answer += str[i];
+        }
         
-        String s = String.join("", answer);
-        
-        return s;
+        return answer;
     }
 }
