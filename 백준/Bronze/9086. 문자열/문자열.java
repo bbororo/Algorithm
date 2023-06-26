@@ -1,14 +1,14 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws IOException {
 
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int num = sc.nextInt();
+        int num = Integer.parseInt(br.readLine());
 
         for(int i = 0;i < num;i++){
-            String str = sc.next();
+            String str = br.readLine();
             System.out.print(str.charAt(0));
             System.out.println(str.charAt(str.length()-1));
         }
