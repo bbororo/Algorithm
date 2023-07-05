@@ -1,22 +1,22 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
+
 public class Main {
- 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		
-		int T = in.nextInt();
-		for(int i = 0; i < T; i++) {
-	
-			int R = in.nextInt();
-			String S = in.next();	// nextLine() 을 쓰면 error!
-			
-			for(int j = 0; j < S.length(); j++) {           
-				for(int k = 0; k < R; k++) {	// R 만큼 반복 출력
-					System.out.print(S.charAt(j));
-				}
-			}
-            
-			System.out.println();
-		}
-	}
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int test = Integer.parseInt(br.readLine());
+        for(int i = 0;i < test; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int re = Integer.parseInt(st.nextToken());
+            String str = st.nextToken();
+
+            for(int j = 0;j < str.length();j++){
+                for(int k = 0;k < re; k++){
+                    System.out.print(str.charAt(j));
+                }
+            }
+            System.out.println();
+        }
+    }
 }
