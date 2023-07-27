@@ -1,19 +1,33 @@
-import java.util.*;
- 
+
+import java.io.*;
+import java.util.StringTokenizer;
+
 public class Main {
-	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
-		int n=sc.nextInt(), m=sc.nextInt();
-		int [] bag = new int[n+1];
-		for(int i=1;i<=n;i++)
-			bag[i]=i;
-		for(int i=0;i<m;i++) {
-			int a=sc.nextInt(), b=sc.nextInt();
-			int temp=bag[a];
-			bag[a]=bag[b];
-			bag[b]=temp;
-		}
-		for(int i=1;i<=n;i++)
-			System.out.print(bag[i]+ " ");
-	}
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        // 1-N번호 매김, 공이 1개씩, 처음엔 바구니번호=공번호, 공 바꿀 바구지2개선택, 두개 공 교환
+        //
+
+        int N = Integer.parseInt(st.nextToken()); // 바구니 갯수
+        int M = Integer.parseInt(st.nextToken());
+        int[] basket = new int[N];
+
+        for(int i = 0;i<N;i++){
+            basket[i] = i+1;
+        }
+
+        for(int i = 0;i<M;i++){
+            st = new StringTokenizer(br.readLine());
+            int I = Integer.parseInt(st.nextToken());
+            int J = Integer.parseInt(st.nextToken());
+            int temp = basket[I-1];
+
+            basket[I-1] = basket[J-1];
+            basket[J-1] = temp;
+        }
+        for(int i =0;i < N ;i++) {
+            System.out.print(basket[i]+" ");
+        }
+    }
 }
