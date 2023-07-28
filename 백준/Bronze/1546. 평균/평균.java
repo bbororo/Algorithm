@@ -1,22 +1,32 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
-       int N = sc.nextInt();
-       int A[] = new int[N];
-       
-       for(int i = 0; i<N; i++){
-       		A[i] = sc.nextInt();
-       }
-       
-       long sum=0;
-       long max = 0;
-       
-       for(int i=0; i<N; i++){
-       	if(max<A[i]) max = A[i];
-        sum+=A[i];
-       }
-       System.out.println(sum*100.0/max/N);        
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(br.readLine());  // 과목ㄱ 갯수
+        double[] credit = new double[N];
+        double max = credit[0];
+        double sum = 0;
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0;i < N ;i++){
+            credit[i] = Integer.parseInt(st.nextToken());
+        }
+
+        for(int i = 0 ; i < N ; i++) {
+            if (credit[i] > max) {
+                max = credit[i];
+            }
+        }
+
+        for(int i = 0;i < N ;i++){
+            credit[i] = (credit[i]/max)*100;
+            sum += credit[i];
+        }
+
+        System.out.println(sum/N);
+
     }
 }
