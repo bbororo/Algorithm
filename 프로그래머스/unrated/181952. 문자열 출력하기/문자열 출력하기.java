@@ -1,10 +1,11 @@
-import java.util.Scanner;
+import java.io.*;
 
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String a = sc.next();
+public class Main {
+public static void main(String[] args)throws IOException{
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println(a);
+    String str = br.readLine();
+
+    System.out.print(str);
     }
 }
