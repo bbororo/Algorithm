@@ -1,8 +1,8 @@
 class Solution {
     public int solution(int n, int k) {
-        int sheep = 12000*n;
+        int sheep = n * 12000;
         int sale = n/10;
-        int coke = 2000*(k-sale);
-        return sheep + coke;
+        int drink = (k-sale) * 2000;
+        return sheep + drink;
     }
 }
