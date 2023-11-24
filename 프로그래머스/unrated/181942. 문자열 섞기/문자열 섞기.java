@@ -5,6 +5,7 @@ class Solution {
         for(int i = 0 ; i < str2.length() ; i++){
             answer += str1.charAt(i);
             answer += str2.charAt(i);
+        
         }
     
         
