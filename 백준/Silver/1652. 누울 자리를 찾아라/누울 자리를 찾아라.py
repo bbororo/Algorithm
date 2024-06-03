@@ -1,6 +1,4 @@
 n = int(input())
-row = 0
-col = 0
 rowBed = 0
 colBed = 0
 arr = [list(input()) for _ in range(n)]
