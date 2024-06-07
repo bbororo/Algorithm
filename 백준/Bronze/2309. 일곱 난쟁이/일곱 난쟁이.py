@@ -2,7 +2,7 @@ arr = [int(input()) for _ in range(9)]
 arr.sort()
 fake1, fake2 = 0, 0
 
-for i in range(9):
+for i in range(8):
     for j in range(i+1, 9):
         if sum(arr) - (arr[i] + arr[j]) == 100:
             fake1 = arr[i]
